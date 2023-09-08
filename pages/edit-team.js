@@ -10,9 +10,11 @@ function EditTeam() {
     });
 
     const [teamInfo, setTeamInfo] = useState(null);
+    const [filteredTeams, setFilteredTeams] = useState([]);
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const router = useRouter();
 
-    // local storage check 
+    // Local storage check 
     useEffect(() => {
         if (typeof window !== 'undefined') {
             const { teamName } = router.query;
@@ -21,11 +23,15 @@ function EditTeam() {
                 const allTeams = JSON.parse(localStorage.getItem('teams')) || [];
                 const selectedTeam = allTeams.find((team) => team.name === teamName);
                 setTeamInfo(selectedTeam);
+
+                const filteredTeams = allTeams.filter((team) => team.name === teamName);
+                setFilteredTeams(filteredTeams)
+
             }
         }
     }, [router.query]);
 
-    // handle input 
+    // Handle input change
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setFormData({
@@ -72,6 +78,11 @@ function EditTeam() {
 
     };
 
+    // Toggle modal visibility
+    const toggleModal = () => {
+        setIsModalOpen(!isModalOpen);
+    };
+
     return (
         <>
             <LoggedCheck />
@@ -79,6 +90,7 @@ function EditTeam() {
             <div className='container'>
                 <div className='box-container'>
                     <h2>Edit Team</h2>
+                    <button onClick={toggleModal}>View all Members</button>
                     {teamInfo ? (
                         <div>
                             <h3>Team Name: {teamInfo.name}</h3>
@@ -97,6 +109,31 @@ function EditTeam() {
                     )}
                 </div>
             </div>
+            {/* Modal */}
+            {isModalOpen && (
+                <div className="modal">
+                    <div className="modal-content">
+                        <span className="close" onClick={toggleModal}>&times;</span>
+                        <h3>Team Members</h3>
+                        {
+                            filteredTeams.length > 0 ? (
+                                <ol>
+                                    {filteredTeams.map((team, index) => (
+                                        <li key={index}>
+                                            <strong>Member Username:</strong> {team.user}
+                                        </li>
+                                    ))}
+                                </ol>
+                            ) : (
+                                <strong>
+                                    <h1>No team member</h1>
+                                </strong>
+                            )
+                        }
+
+                    </div>
+                </div>
+            )}
         </>
     );
 }

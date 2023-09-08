@@ -105,7 +105,7 @@ function Dashboard() {
           </tbody>
         </table>
       ) : (
-        <p>No data to show</p>
+        <h1><strong>No data to show</strong></h1>
       )}
     </>
   );

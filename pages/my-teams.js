@@ -5,7 +5,7 @@ import LoggedCheck from './components/loggedCheck';
 import Link from 'next/link';
 import Navigation from './components/navigation';
 
-function ManageTeams() {
+function MyTeams() {
     const [userTeams, setUserTeams] = useState([]);
     const [loggedInUsername, setLoggedInUsername] = useState(null);
     const router = useRouter();
@@ -51,4 +51,4 @@ function ManageTeams() {
     );
 }
 
-export default ManageTeams;
+export default MyTeams;

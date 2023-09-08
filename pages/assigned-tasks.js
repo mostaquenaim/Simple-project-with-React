@@ -32,13 +32,13 @@ function AssignedTasks() {
     useEffect(() => {
         // Apply filtering based on the selected status
         let filtered = [...userTasks];
-    
+
         if (filterStatus === 'completed') {
             filtered = filtered.filter((task) => task.isCompleted);
         } else if (filterStatus === 'notCompleted') {
             filtered = filtered.filter((task) => !task.isCompleted);
         }
-    
+
         // Apply sorting based on the selected criteria
         if (sortCriteria === 'priority') {
             const priorityValues = {
@@ -46,7 +46,7 @@ function AssignedTasks() {
                 'medium': 2,
                 'low': 1
             };
-    
+
             filtered.sort((a, b) => {
                 const order = sortOrder === 'asc' ? 1 : -1;
                 return order * (priorityValues[b.priority] - priorityValues[a.priority]);
@@ -57,11 +57,11 @@ function AssignedTasks() {
                 return order * (new Date(a.dueDate) - new Date(b.dueDate));
             });
         }
-    
+
         // Update the filtered tasks
         setFilteredTasks(filtered);
     }, [filterStatus, sortCriteria, userTasks, sortOrder]);
-    
+
 
     const handleMarking = (taskTitle) => {
 
@@ -70,22 +70,22 @@ function AssignedTasks() {
             if (task.title === taskTitle) {
                 return {
                     ...task,
-                    isCompleted: true, 
+                    isCompleted: true,
                 };
             }
             return task;
         });
-    
+
         localStorage.setItem('tasks', JSON.stringify(updatedTasks));
-    
+
         setUserTasks(updatedTasks);
     };
-    
+
 
     return (
         <>
             <LoggedCheck />
-            <Navigation/>
+            <Navigation />
             <h2>Tasks for {loggedInUsername}</h2>
             <div>
                 <label>Filter by Status:</label>
@@ -101,40 +101,47 @@ function AssignedTasks() {
                     <option value="priority">Priority</option>
                     <option value="dueDate">Due Date</option>
                 </select>
-                <button className='btn-primary'  onClick={() => setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc')}>
+                <button className='btn-primary' onClick={() => setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc')}>
                     {sortOrder === 'asc' ? 'Ascending' : 'Descending'}
                 </button>
             </div>
-            <table border="1">
-                <thead>
-                    <tr>
-                        <th>Title</th>
-                        <th>Description</th>
-                        <th>Due Date</th>
-                        <th>Priority</th>
-                        <th>Created By</th>
-                        <th>Assigned to</th>
-                        <th>Completed?</th>
+            {filteredTasks.length > 0 ? (
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>Due Date</th>
+                            <th>Priority</th>
+                            <th>Created By</th>
+                            <th>Assigned to</th>
+                            <th>Completed?</th>
 
-                    </tr>
-                </thead>
-                <tbody>
-                    {filteredTasks.map((task, index) => (
-                        <tr key={index}>
-                            <td>{task.title}</td>
-                            <td>{task.description}</td>
-                            <td>{task.dueDate}</td>
-                            <td>{task.priority}</td>
-                            <td>{task.createdBy}</td>
-                            <td>{task.assignedTo}</td>
-                            <td>{task.isCompleted ? "yes" : 
-                            <button className='btn-primary'  onClick={() => handleMarking(task.title)}>Mark as completed</button>
-                            }</td>
-                            
                         </tr>
-                    ))}
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        {filteredTasks.map((task, index) => (
+                            <tr key={index}>
+                                <td>{task.title}</td>
+                                <td>{task.description}</td>
+                                <td>{task.dueDate}</td>
+                                <td>{task.priority}</td>
+                                <td>{task.createdBy}</td>
+                                <td>{task.assignedTo}</td>
+                                <td>{task.isCompleted ? "yes" :
+                                    <button className='btn-primary' onClick={() => handleMarking(task.title)}>Mark as completed</button>
+                                }</td>
+
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            )
+                :
+                (
+                    <h1><strong>No data to show</strong></h1>
+                )
+            }
         </>
     );
 }

@@ -28,13 +28,13 @@ function ManageTask() {
     useEffect(() => {
         // Apply filtering based on the selected status
         let filtered = [...userTasks];
-    
+
         if (filterStatus === 'completed') {
             filtered = filtered.filter((task) => task.isCompleted);
         } else if (filterStatus === 'notCompleted') {
             filtered = filtered.filter((task) => !task.isCompleted);
         }
-    
+
         // Apply sorting based on the selected criteria
         if (sortCriteria === 'priority') {
             const priorityValues = {
@@ -42,7 +42,7 @@ function ManageTask() {
                 'medium': 2,
                 'low': 1
             };
-    
+
             filtered.sort((a, b) => {
                 const order = sortOrder === 'asc' ? 1 : -1;
                 return order * (priorityValues[b.priority] - priorityValues[a.priority]);
@@ -53,11 +53,11 @@ function ManageTask() {
                 return order * (new Date(a.dueDate) - new Date(b.dueDate));
             });
         }
-    
+
         // Update the filtered tasks
         setFilteredTasks(filtered);
     }, [filterStatus, sortCriteria, userTasks, sortOrder]);
-    
+
     const handleUpdate = (taskTitle) => {
         router.push(`/edit-task?taskTitle=${taskTitle}`);
     };
@@ -65,7 +65,7 @@ function ManageTask() {
     return (
         <>
             <LoggedCheck />
-            <Navigation/>
+            <Navigation />
             <h2>Tasks for {loggedInUsername}</h2>
             <div>
                 <label>Filter by Status:</label>
@@ -81,42 +81,49 @@ function ManageTask() {
                     <option value="priority">Priority</option>
                     <option value="dueDate">Due Date</option>
                 </select>
-                <button className='btn-primary'  onClick={() => setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc')}>
+                <button className='btn-primary' onClick={() => setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc')}>
                     {sortOrder === 'asc' ? 'Ascending' : 'Descending'}
                 </button>
             </div>
-            <table border="1">
-                <thead>
-                    <tr>
-                        <th>Title</th>
-                        <th>Description</th>
-                        <th>Due Date</th>
-                        <th>Priority</th>
-                        <th>Created By</th>
-                        <th>Assigned to</th>
-                        <th>Completed?</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {filteredTasks.map((task, index) => (
-                        <tr key={index}>
-                            <td>{task.title}</td>
-                            <td>{task.description}</td>
-                            <td>{task.dueDate}</td>
-                            <td>{task.priority}</td>
-                            <td>{task.createdBy}</td>
-                            <td>{task.assignedTo}</td>
-                            <td>{task.isCompleted ? "yes" : "no"}</td>
-                            <td>
-                                <button className='btn-primary'  onClick={() => handleUpdate(task.title)}>
-                                    Update
-                                </button>
-                            </td>
+            {filteredTasks.length > 0 ? (
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>Due Date</th>
+                            <th>Priority</th>
+                            <th>Created By</th>
+                            <th>Assigned to</th>
+                            <th>Completed?</th>
                         </tr>
-                    ))}
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        {filteredTasks.map((task, index) => (
+                            <tr key={index}>
+                                <td>{task.title}</td>
+                                <td>{task.description}</td>
+                                <td>{task.dueDate}</td>
+                                <td>{task.priority}</td>
+                                <td>{task.createdBy}</td>
+                                <td>{task.assignedTo === "none" ? 
+                                (
+                                    <button className='btn-primary' onClick={() => handleUpdate(task.title)}>
+                                        Assign
+                                    </button>
+                                ):(
+                                    task.assignedTo
+                                )}</td>
+                                <td>{task.isCompleted ? "yes" : "no"}</td>
+                                
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            ) : (
+                <h1><strong>No Task to show</strong></h1>
+            )
+            }
         </>
     );
 }
