@@ -26,7 +26,7 @@ export default function Navigation() {
                     <Link href="/my-info">My Info</Link>
                 </li>
                 <li>
-                    <Link href="/all-tasks">All Tasks</Link>
+                    <Link href="/all-tasks">Dashboard</Link>
                 </li>
                 <li>
                     <Link href="/assigned-tasks">Assigned Tasks</Link>
