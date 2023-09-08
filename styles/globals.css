@@ -1,0 +1,126 @@
+body {
+  padding: 20px 20px 60px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+  gap: 10px
+}
+
+/* styles to buttons */
+button {
+  background-color: #007BFF;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/*  hover effect to buttons */
+button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/*  tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+/* inputs and forms */
+input[type="text"], input[type="password"] {
+  
+  padding: 10px;
+  display: block;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+textarea{
+  display: block;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/*  transition effect to inputs */
+input[type="text"], input[type="password"], select, textarea {
+  transition: border-color 0.3s ease;
+}
+
+/* hover effect to inputs */
+input[type="text"]:hover, input[type="password"]:hover, select:hover, textarea:hover {
+  border-color: #007BFF;
+}
+
+/* Style form elements */
+form {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+}
+
+/* Apply styles to links */
+a {
+  color: #007BFF;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* Add a hover effect to links */
+a:hover {
+  color: #0056b3;
+}
+
+/* Navbar */
+nav {
+  background-color: #f5f5f5;;
+  padding: 10px;
+  display: flex;
+  justify-content:space-between;
+  
+}
+
+/* Navbar Links */
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+  align-items: center;
+  text-align: center;
+}
+
+/* Navbar Link Text */
+nav ul li a {
+  color: black; /* Set the font color to black */
+  text-decoration: none;
+}
+
+/* Navbar Link Hover Effect */
+nav ul li a:hover {
+  color: #333; /* Change the font color on hover */
+}
+
