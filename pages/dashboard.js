@@ -11,8 +11,8 @@ function Dashboard() {
   const [filteredTasks, setFilteredTasks] = useState([]);
   const [loggedInUsername, setLoggedInUsername] = useState(null);
   const [filterStatus, setFilterStatus] = useState('all');
-  const [sortCriteria, setSortCriteria] = useState('priority'); // 'priority', 'dueDate'
-  const [sortOrder, setSortOrder] = useState('asc'); // 'asc', 'desc'
+  const [sortCriteria, setSortCriteria] = useState('priority'); 
+  const [sortOrder, setSortOrder] = useState('asc'); 
 
   useEffect(() => {
     const allTasks = JSON.parse(localStorage.getItem('tasks')) || [];

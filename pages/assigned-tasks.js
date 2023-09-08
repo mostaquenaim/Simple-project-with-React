@@ -11,8 +11,8 @@ function AssignedTasks() {
     const [loggedInUsername, setLoggedInUsername] = useState(null);
     const [filteredTasks, setFilteredTasks] = useState([]);
     const [filterStatus, setFilterStatus] = useState('all');
-    const [sortCriteria, setSortCriteria] = useState('priority'); // 'priority', 'dueDate'
-    const [sortOrder, setSortOrder] = useState('asc'); // 'asc', 'desc'
+    const [sortCriteria, setSortCriteria] = useState('priority'); 
+    const [sortOrder, setSortOrder] = useState('asc'); 
 
     useEffect(() => {
         // Check if window is defined (client-side) before using localStorage
