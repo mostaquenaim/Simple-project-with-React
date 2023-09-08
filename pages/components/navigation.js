@@ -43,9 +43,6 @@ export default function Navigation() {
                 <li>
                     <Link href="/manage-tasks">Manage Tasks</Link>
                 </li>
-                <li>
-                    <Link href="/my-info">My Info</Link>
-                </li>
             </ul>
             <div>
                 <button className='btn-logout' onClick={handleLogout}>
