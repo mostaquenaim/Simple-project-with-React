@@ -26,7 +26,7 @@ function MyInfo() {
             <LoggedCheck />
             <Navigation />
             {user ? (
-                <div>
+                <div className='box-container'>
                     <h2>My Information</h2>
                     <p><strong>Username:</strong> {user.username}</p>
                     <p><strong>Email:</strong> {user.email}</p>
