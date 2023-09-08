@@ -9,19 +9,22 @@ export default function Navigation() {
     const handleLogout = () => {
 
         //logout
-          sessionStorage.removeItem('username');
-          router.push('/login');
-    
-      };
+        sessionStorage.removeItem('username');
+        router.push('/login');
+
+    };
 
     return (
         <nav className="navbar">
             <div className="navbar-logo">
                 <Link href='/dashboard'>
-                <Image src="/OIP.jpeg" alt="Logo" width={50} height={50} />
+                    <Image src="/OIP.jpeg" alt="Logo" width={50} height={50} />
                 </Link>
             </div>
             <ul className="navbar-links">
+                <li>
+                    <Link href="/my-info">My Info</Link>
+                </li>
                 <li>
                     <Link href="/all-tasks">All Tasks</Link>
                 </li>
@@ -39,6 +42,9 @@ export default function Navigation() {
                 </li>
                 <li>
                     <Link href="/manage-tasks">Manage Tasks</Link>
+                </li>
+                <li>
+                    <Link href="/my-info">My Info</Link>
                 </li>
             </ul>
             <div>
