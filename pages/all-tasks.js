@@ -72,7 +72,7 @@ function AllTasks() {
                     <option value="priority">Priority</option>
                     <option value="dueDate">Due Date</option>
                 </select>
-                <button className="btn-primary" onClick={() => setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc')}>
+                <button className='btn-primary' onClick={() => setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc')}>
                     {sortOrder === 'asc' ? 'Ascending' : 'Descending'}
                 </button>
             </div>

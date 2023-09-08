@@ -101,7 +101,7 @@ function AssignedTasks() {
                     <option value="priority">Priority</option>
                     <option value="dueDate">Due Date</option>
                 </select>
-                <button onClick={() => setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc')}>
+                <button className='btn-primary'  onClick={() => setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc')}>
                     {sortOrder === 'asc' ? 'Ascending' : 'Descending'}
                 </button>
             </div>
@@ -128,7 +128,7 @@ function AssignedTasks() {
                             <td>{task.createdBy}</td>
                             <td>{task.assignedTo}</td>
                             <td>{task.isCompleted ? "yes" : 
-                            <button onClick={() => handleMarking(task.title)}>Mark as completed</button>
+                            <button className='btn-primary'  onClick={() => handleMarking(task.title)}>Mark as completed</button>
                             }</td>
                             
                         </tr>

@@ -36,25 +36,25 @@ function EditTeam() {
 
     const handleSubmit = () => {
         const { user } = formData;
-    
+
         // Check if the username exists in localStorage users
         const users = JSON.parse(localStorage.getItem('users')) || [];
         const userExists = users.some((item) => item.username === user);
-    
+
         if (!userExists) {
             alert('User does not exist.');
             return;
         }
-    
+
         // Fetch all the rows where the name is teamInfo.name
         const allTeams = JSON.parse(localStorage.getItem('teams')) || [];
         const relatedRows = allTeams.filter((team) => team.name === teamInfo.name);
 
         console.log("relatedRows", relatedRows)
-    
+
         // Check if any related row has the user already in members
         const userAlreadyInTeam = relatedRows.some((team) => team.user === user);
-    
+
         if (userAlreadyInTeam) {
             alert('User already exists in the team.');
             return;
@@ -69,30 +69,34 @@ function EditTeam() {
         teams.push(newMember);
         localStorage.setItem('teams', JSON.stringify(teams));
         alert('Member added successful!');
-    
+
     };
-    
+
     return (
         <>
             <LoggedCheck />
-            <Navigation/>
-            <h2>Edit Team</h2>
-            {teamInfo ? (
-                <div>
-                    <h3>Team Name: {teamInfo.name}</h3>
-                    <input
-                        type="text"
-                        name="user"
-                        placeholder="Enter a user's username"
-                        value={formData.user}
-                        onChange={handleInputChange}
-                        required
-                    />
-                    <button onClick={handleSubmit}>Add User</button>
+            <Navigation />
+            <div className='container'>
+                <div className='box-container'>
+                    <h2>Edit Team</h2>
+                    {teamInfo ? (
+                        <div>
+                            <h3>Team Name: {teamInfo.name}</h3>
+                            <input
+                                type="text"
+                                name="user"
+                                placeholder="Enter a user's username"
+                                value={formData.user}
+                                onChange={handleInputChange}
+                                required
+                            />
+                            <button className='btn-primary' onClick={handleSubmit}>Add User</button>
+                        </div>
+                    ) : (
+                        <p>Team not found or loading...</p>
+                    )}
                 </div>
-            ) : (
-                <p>Team not found or loading...</p>
-            )}
+            </div>
         </>
     );
 }

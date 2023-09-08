@@ -81,7 +81,7 @@ function ManageTask() {
                     <option value="priority">Priority</option>
                     <option value="dueDate">Due Date</option>
                 </select>
-                <button onClick={() => setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc')}>
+                <button className='btn-primary'  onClick={() => setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc')}>
                     {sortOrder === 'asc' ? 'Ascending' : 'Descending'}
                 </button>
             </div>
@@ -109,7 +109,7 @@ function ManageTask() {
                             <td>{task.assignedTo}</td>
                             <td>{task.isCompleted ? "yes" : "no"}</td>
                             <td>
-                                <button onClick={() => handleUpdate(task.title)}>
+                                <button className='btn-primary'  onClick={() => handleUpdate(task.title)}>
                                     Update
                                 </button>
                             </td>

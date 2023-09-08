@@ -60,7 +60,7 @@ function EditTask() {
 
     const handleSubmit = () => {
         const { user } = formData;
-    
+
         // Find the task with title === taskInfo.title
         const allTasks = JSON.parse(localStorage.getItem('tasks')) || [];
         const updatedTasks = allTasks.map((task) => {
@@ -72,42 +72,46 @@ function EditTask() {
             }
             return task;
         });
-    
+
         localStorage.setItem('tasks', JSON.stringify(updatedTasks));
         alert('User assigned to the task successfully.');
     };
-    
+
 
     return (
         <>
             <LoggedCheck />
-            <Navigation/>
-            <h2>Edit Task</h2>
-            <div>
-                <label>Select Team for Assigning Member From:</label>
-                <select onChange={handleTeamSelect}>
-                    <option value="">Select Team</option>
-                    {members.map((team, index) => (
-                        <option key={index} value={team.name}>
-                            {team.name}
-                        </option>
-                    ))}
-                </select>
-            </div>
-            {selectedTeam && (
-                <div>
-                    <label>Select Member:</label>
-                    <select name="user" onChange={handleInputChange}>
-                        <option value="">Select Member</option>
-                        {selectedTeams.map((member, index) => (
-                            <option key={index} value={member.user}>
-                                {member.user}
-                            </option>
-                        ))}
-                    </select>
+            <Navigation />
+            <div className='container'>
+                <div className='box-container'>
+                    <h2>Edit Task</h2>
+                    <div>
+                        <label>Select Team for Assigning Member From:</label>
+                        <select onChange={handleTeamSelect}>
+                            <option value="">Select Team</option>
+                            {members.map((team, index) => (
+                                <option key={index} value={team.name}>
+                                    {team.name}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
+                    {selectedTeam && (
+                        <div>
+                            <label>Select Member:</label>
+                            <select name="user" onChange={handleInputChange}>
+                                <option value="">Select Member</option>
+                                {selectedTeams.map((member, index) => (
+                                    <option key={index} value={member.user}>
+                                        {member.user}
+                                    </option>
+                                ))}
+                            </select>
+                        </div>
+                    )}
+                    <button className='btn-primary' onClick={handleSubmit}>Assign User</button>
                 </div>
-            )}
-            <button onClick={handleSubmit}>Assign User</button>
+            </div>
         </>
     );
 }

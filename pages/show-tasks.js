@@ -43,7 +43,7 @@ function ShowTasks() {
                         onChange={handleInputChange}
                         required
                     />
-                    <button onClick={handleSubmit}>Add User</button>
+                    <button className='btn-primary'  onClick={handleSubmit}>Add User</button>
                 </div>
             ) : (
                 <p>Team not found or loading...</p>

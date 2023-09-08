@@ -42,7 +42,7 @@ export default function Navigation() {
                 </li>
             </ul>
             <div>
-                <button onClick={handleLogout}>
+                <button className='btn-logout' onClick={handleLogout}>
                     Logout
                 </button>
             </div>

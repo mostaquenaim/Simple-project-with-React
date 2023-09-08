@@ -10,11 +10,32 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh; 
-  gap: 10px
+  gap: 10px;
 }
 
+.box-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: azure;
+  border: 2px solid #007BFF; 
+  gap: 10px;
+}
+
+.box-container-login{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color:beige;
+  border: 2px solid rgb(234, 234, 18);
+}
 /* styles to buttons */
-button {
+
+.btn-primary{
   background-color: #007BFF;
   color: #fff;
   padding: 10px 20px;
@@ -24,9 +45,26 @@ button {
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
+.btn-logout{
+  background-color: red;
+  color: #fff;
+  font-weight: 700;
+  padding: 10px 20px;
+  border: 1px solid black;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
 /*  hover effect to buttons */
-button:hover {
+.btn-primary:hover {
   background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.btn-logout:hover{
+  background-color: rgb(141, 13, 13);
+  border: none;
   transform: scale(1.05);
 }
 
@@ -124,3 +162,9 @@ nav ul li a:hover {
   color: #333; /* Change the font color on hover */
 }
 
+.teams-list{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

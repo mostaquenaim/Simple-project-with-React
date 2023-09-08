@@ -33,10 +33,10 @@ function ManageTask() {
             <LoggedCheck />
             <Navigation/>
             <h2>Teams for {loggedInUsername}</h2>
-            <ul>
+            <ul className='teams-list'>
                 {userTeams.map((team, index) => (
                     <li key={index}>
-                        <button onClick={() => handleTeamClick(team.name)}>
+                        <button className='btn-primary'  onClick={() => handleTeamClick(team.name)}>
                             {team.name}
                         </button>
                     </li>

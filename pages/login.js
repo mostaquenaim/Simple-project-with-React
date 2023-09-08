@@ -27,7 +27,6 @@ function Login() {
 
     if (user) {
       sessionStorage.setItem('username', user.username);
-      alert('Login successful!');
       router.push('dashboard')
       
     } else {
@@ -40,6 +39,7 @@ function Login() {
       <IndexCheck/>
       
       <div className='container'>
+        <div className='box-container-login'>
       <h2>User Login</h2>
       <input
         type="text"
@@ -55,8 +55,9 @@ function Login() {
         value={formData.password}
         onChange={handleInputChange}
       />
-      <button onClick={handleLogin}>Login</button>
+      <button className='btn-primary'  onClick={handleLogin}>Login</button>
       <a href='registration'> Not registered yet?</a>
+      </div>
       </div>
     </div>
   );
