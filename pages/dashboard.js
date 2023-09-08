@@ -28,6 +28,12 @@ function Dashboard() {
     } else if (filterStatus === 'notCompleted') {
       filtered = filtered.filter((task) => !task.isCompleted);
     }
+    else if(filterStatus === 'assigned'){
+      filtered = filtered.filter((task) => task.assignedTo !== "none");
+    }
+    else if(filterStatus === 'notAssigned'){
+      filtered = filtered.filter((task) => task.assignedTo === "none");
+    }
 
     // Apply sorting based on the selected criteria
     if (sortCriteria === 'priority') {
@@ -65,6 +71,8 @@ function Dashboard() {
           <option value="all">All</option>
           <option value="completed">Completed</option>
           <option value="notCompleted">Not Completed</option>
+          <option value="assigned">Assigned</option>
+          <option value="notAssigned">Not Assigned</option>
         </select>
       </div>
       <div>
