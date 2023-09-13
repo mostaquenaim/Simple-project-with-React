@@ -19,7 +19,7 @@ To run the Collaborative Task Management App locally, follow these steps:
 
 3. **Start the Development Server:**
 
-npm run dev
+<code> npm run dev </code>
 
 4. **Access the Application:**
 
