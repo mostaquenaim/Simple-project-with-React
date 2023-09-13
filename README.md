@@ -15,7 +15,7 @@ To run the Collaborative Task Management App locally, follow these steps:
 <code> git clone https://github.com/mostaquenaim/Simple-project-with-React.git </code>
 
 
-2. **Install Dependencies:** (Add instructions for installing dependencies if needed)
+2. **Install Dependencies:** 
 
 3. **Start the Development Server:**
 
