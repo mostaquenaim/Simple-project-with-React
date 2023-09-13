@@ -1,8 +1,3 @@
-<a href="https://simple-project-with-react.vercel.app/login" target="_blank">WATCH LIVE</a>
-<br> 
-<br> 
-<br> 
-<br> 
 
 <h1>Collaborative Task Management App</h1>
 
