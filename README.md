@@ -1,128 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Collaborative Task Management App</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-            color: #333;
-        }
+# Collaborative Task Management App
 
-        h1 {
-            background-color: #007bff;
-            color: #fff;
-            padding: 20px;
-        }
+Welcome to the Collaborative Task Management App! This application allows users to efficiently manage tasks, collaborate, and stay organized in a team environment.
 
-        h2 {
-            margin-top: 20px;
-            color: #007bff;
-        }
+## Live Demo
 
-        p {
-            margin: 10px 0;
-        }
+You can access the live demo of this application [here](https://simple-project-with-react.vercel.app/login).
 
-        a {
-            color: #007bff;
-            text-decoration: none;
-        }
+## Getting Started
 
-        code {
-            background-color: #f8f8f8;
-            padding: 2px 4px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-        }
+To run the Collaborative Task Management App locally, follow these steps:
 
-        ol {
-            padding-left: 20px;
-        }
+1. **Clone the Repository:**
 
-        ul {
-            list-style-type: disc;
-            padding-left: 20px;
-        }
+git clone https://github.com/mostaquenaim/Simple-project-with-React.git
 
-        li {
-            margin: 10px 0;
-        }
-    </style>
-</head>
-<body>
-    <h1>Collaborative Task Management App</h1>
 
-    <p>Welcome to the Collaborative Task Management App! This application allows users to efficiently manage tasks, collaborate, and stay organized in a team environment.</p>
+2. **Install Dependencies:** (Add instructions for installing dependencies if needed)
 
-    <h2>Live Demo</h2>
-    <p>You can access the live demo of this application <a href="https://simple-project-with-react.vercel.app/login" target="_blank">here</a>.</p>
+3. **Start the Development Server:**
 
-    <h2>Getting Started</h2>
+npm run dev
 
-    <p>To run the Collaborative Task Management App locally, follow these steps:</p>
+4. **Access the Application:**
 
-    <ol>
-        <li>Clone the Repository:</li>
-        <code>git clone https://github.com/mostaquenaim/Simple-project-with-React.git</code>
+Open your web browser and go to [http://localhost:3000](http://localhost:3000) to access the Collaborative Task Management App.
 
-        <li>Install Dependencies:</li>
-        <!-- Add instructions for installing dependencies if needed -->
+## Features
 
-        <li>Start the Development Server:</li>
-        <code>npm run dev</code> 
+The Collaborative Task Management App offers the following features:
 
-        <li>Access the Application:</li>
-        <p>Open your web browser and go to <a href="http://localhost:3000" target="_blank">http://localhost:3000</a> to access the Collaborative Task Management App.</p>
-    </ol>
+- **User Authentication:**
+- Register, log in, and log out.
+- Manage your user profile with a profile picture, username, and bio.
 
-    <h2>Features</h2>
+- **Task Creation and Management:**
+- Create tasks with titles, due dates, and priority levels.
+- Assign tasks to team members.
+- Mark tasks as completed.
 
-    <p>The Collaborative Task Management App offers the following features:</p>
+- **Team Collaboration:**
+- Create teams and invite members to collaborate.
+- View and manage tasks within your team.
 
-    <ul>
-        <li>User Authentication:</li>
-        <ul>
-            <li>Register, log in, and log out.</li>
-            <li>Manage your user profile with a profile picture, username, and bio.</li>
-        </ul>
+- **Task Filtering and Sorting:**
+- Filter tasks by assigned or unassigned, completed or not completed.
+- Sort tasks by priority or due date.
 
-        <li>Task Creation and Management:</li>
-        <ul>
-            <li>Create tasks with titles, due dates, and priority levels.</li>
-            <li>Assign tasks to team members.</li>
-            <li>Mark tasks as completed.</li>
-        </ul>
+- **Technology Used:**
+- Next.js and React.js
 
-        <li>Team Collaboration:</li>
-        <ul>
-            <li>Create teams and invite members to collaborate.</li>
-            <li>View and manage tasks within your team.</li>
-        </ul>
+## Data Storage
 
-        <li>Task Filtering and Sorting:</li>
-        <ul>
-            <li>Filter tasks by assigned or unassigned, completed or not completed.</li>
-            <li>Sort tasks by priority or due date.</li>
-        </ul>
+The Collaborative Task Management App uses local storage for data storage.
 
-        <li>Technology Used:</li>
-        <ul>
-            <li>Next.js and React.js</li>
-        </ul>
-    </ul>
+## Deployment
 
-    <h2>Data Storage</h2>
-
-    <p>The Collaborative Task Management App uses local storage for data storage.</p>
-
-    <h2>Deployment</h2>
-
-    <p>The application is deployed on Vercel, and you can access the live version at the top of this README.</p>
-</body>
-</html>
+The application is deployed on Vercel, and you can access the live version at the top of this README.
