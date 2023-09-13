@@ -4,42 +4,76 @@
 <br> 
 <br> 
 
+<h1>Collaborative Task Management App</h1>
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p>Welcome to the Collaborative Task Management App! This application allows users to efficiently manage tasks, collaborate, and stay organized in a team environment.</p>
 
-## Getting Started
+<h2>Live Demo</h2>
+<p>You can access the live demo of this application <a href="https://simple-project-with-react.vercel.app/login" target="_blank">here</a>.</p>
 
-First, run the development server:
+<h2>Getting Started</h2>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+<p>To run the Collaborative Task Management App locally, follow these steps:</p>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<ol>
+  <li>Clone the Repository:</li>
+  <code>git clone [repository-url]</code>
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+  <li>Navigate to the Project Directory:</li>
+  <code>cd collaborative-task-management-app</code>
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+  <li>Install Dependencies:</li>
+  <code>npm install</code> or <code>yarn install</code>
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+  <li>Start the Development Server:</li>
+  <code>npm run dev</code> or <code>yarn dev</code>
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+  <li>Access the Application:</li>
+  <p>Open your web browser and go to <a href="http://localhost:3000" target="_blank">http://localhost:3000</a> to access the Collaborative Task Management App.</p>
+</ol>
 
-## Learn More
+<h2>Features</h2>
 
-To learn more about Next.js, take a look at the following resources:
+<p>The Collaborative Task Management App offers the following features:</p>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<ul>
+  <li>User Authentication:</li>
+  <ul>
+    <li>Register, log in, and log out.</li>
+    <li>Manage your user profile with a profile picture, username, and bio.</li>
+  </ul>
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+  <li>Task Creation and Management:</li>
+  <ul>
+    <li>Create tasks with titles, descriptions, due dates, and priority levels.</li>
+    <li>Assign tasks to team members.</li>
+    <li>Mark tasks as completed or in progress.</li>
+  </ul>
 
-## Deploy on Vercel
+  <li>Team Collaboration:</li>
+  <ul>
+    <li>Create teams and invite members to collaborate.</li>
+    <li>View and manage tasks within your team.</li>
+  </ul>
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+  <li>Task Filtering and Sorting:</li>
+  <ul>
+    <li>Filter tasks by assigned or unassigned, completed or not completed.</li>
+    <li>Sort tasks by priority or due date.</li>
+  </ul>
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+  <li>Technology Used:</li>
+  <ul>
+    <li>Next.js and React.js</li>
+  </ul>
+</ul>
+
+<h2>Data Storage</h2>
+
+<p>The Collaborative Task Management App uses local storage for data storage.</p>
+
+<h2>Deployment</h2>
+
+<p>The application is deployed on Vercel, and you can access the live version at the top of this README.</p>
+
+</html>
