@@ -1,4 +1,4 @@
-LIVE LINK: https://simple-project-with-react.vercel.app/login 
+ <a href="https://simple-project-with-react.vercel.app/login" target="_blank">WATCH LIVE</a>
 <br> 
 <br> 
 <br> 
