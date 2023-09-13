@@ -14,9 +14,6 @@
   <li>Clone the Repository:</li>
   <code>git clone https://github.com/mostaquenaim/Simple-project-with-React.git</code>
 
-  <li>Navigate to the Project Directory:</li>
-  <code>cd collaborative-task-management-app</code>
-
   <li>Install Dependencies:</li>
   <code>npm install</code> =
 
