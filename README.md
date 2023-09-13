@@ -17,16 +17,16 @@
 
 <ol>
   <li>Clone the Repository:</li>
-  <code>git clone [repository-url]</code>
+  <code>git clone https://github.com/mostaquenaim/Simple-project-with-React.git</code>
 
   <li>Navigate to the Project Directory:</li>
   <code>cd collaborative-task-management-app</code>
 
   <li>Install Dependencies:</li>
-  <code>npm install</code> or <code>yarn install</code>
+  <code>npm install</code> =
 
   <li>Start the Development Server:</li>
-  <code>npm run dev</code> or <code>yarn dev</code>
+  <code>npm run dev</code> =
 
   <li>Access the Application:</li>
   <p>Open your web browser and go to <a href="http://localhost:3000" target="_blank">http://localhost:3000</a> to access the Collaborative Task Management App.</p>
