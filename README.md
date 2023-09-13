@@ -15,7 +15,6 @@
   <code>git clone https://github.com/mostaquenaim/Simple-project-with-React.git</code>
 
   <li>Install Dependencies:</li>
-  <code>npm install</code> 
 
   <li>Start the Development Server:</li>
   <code>npm run dev</code> 
