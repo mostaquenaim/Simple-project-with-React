@@ -36,9 +36,9 @@
 
   <li>Task Creation and Management:</li>
   <ul>
-    <li>Create tasks with titles, descriptions, due dates, and priority levels.</li>
+    <li>Create tasks with titles, due dates, and priority levels.</li>
     <li>Assign tasks to team members.</li>
-    <li>Mark tasks as completed or in progress.</li>
+    <li>Mark tasks as completed </li>
   </ul>
 
   <li>Team Collaboration:</li>
